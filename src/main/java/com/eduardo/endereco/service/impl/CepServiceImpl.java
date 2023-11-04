@@ -18,6 +18,9 @@ public class CepServiceImpl implements CepService {
     @Override
     @CircuitBreaker(name = "endereco", fallbackMethod = "fallBackFindEndereco")
     public CepDTO findEndereco(String cep) {
+        if (cep.contains("0")){
+            throw new RuntimeException("Error: ViaCep indisponivel.");
+        }
         return viaCepClient.findEndereco(cep).to();
     }
 

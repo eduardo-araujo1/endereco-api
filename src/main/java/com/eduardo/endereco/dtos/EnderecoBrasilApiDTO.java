@@ -18,6 +18,7 @@ public class EnderecoBrasilApiDTO {
     public CepDTO to(){
         return CepDTO.builder()
                 .cep(this.cep)
+                .logradouro(this.street)
                 .bairro(this.neighborhood)
                 .cidade(this.city)
                 .estado(this.state)
