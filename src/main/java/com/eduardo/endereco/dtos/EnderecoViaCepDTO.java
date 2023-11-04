@@ -18,6 +18,7 @@ public class EnderecoViaCepDTO {
     public CepDTO to(){
         return CepDTO.builder()
                 .cep(this.cep)
+                .logradouro(this.logradouro)
                 .bairro(this.bairro)
                 .cidade(this.localidade)
                 .estado(this.uf)
